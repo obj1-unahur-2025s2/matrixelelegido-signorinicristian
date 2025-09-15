@@ -15,4 +15,14 @@ describe "Testeamos a Neo" {
     assert.equals(5, neo.vitalidad())
   }
 
+  test "Vitalidad inicial de Morfeo" {
+    morfeo.saltar()
+    assert.equals(7, morfeo.vitalidad())
+  }
+
+  test "Morfeo esta cansado despues de saltar" {
+    morfeo.saltar()
+    assert.notThat(morfeo.estaDescansado())
+  }
+
 }
