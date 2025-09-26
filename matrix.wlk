@@ -40,14 +40,14 @@ object trinity {
 object nave {
     const pasajeros = #{neo, morfeo, trinity} 
 
+    const vitalidades = pasajeros.map({p => p.vitalidad()})
+
     method cantidadDePasajeros() = pasajeros.size()
 
     method pasajeroDeMayorVitalidad() = pasajeros.max({p => p.vitalidad()})
 
     method estaEquilibrada() {
-      pasajeros.max({p => p.vitalidad() * 2}).all(
-        {v => v < self.pasajeroDeMayorVitalidad().vitalidad()}
-      )
+      return vitalidades.max() <= 2 * vitalidades.min()
     }
 
     method estaElElegido() = pasajeros.any({p => p.esElElegido()})
