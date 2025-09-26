@@ -44,4 +44,8 @@ describe "Testeamos a Neo" {
   test "Está el elegido" {
     assert.that(nave.estaElElegido())
   }
+
+  test "La nave no está equilibrada" {
+    assert.notThat(nave.estaEquilibrada())
+  }
 }
